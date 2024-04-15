@@ -1,0 +1,212 @@
+@font-face {
+  font-family: CeraPro;
+  src: url('../font/CeraPro-Regular.woff');
+}
+@font-face {
+    font-family: CeraProBold;
+    src: url('../font/CeraPro-Bold.woff');
+}
+
+/* Layout */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: CeraPro;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    background-color: #ffcf00;
+    img{
+        width: 200px;
+        height: 100px;
+    }
+    ul{
+        list-style: none;
+        padding: 0 10px 0 0;
+        font-size: 18px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;;
+    }
+    li{
+        margin: 5px;
+    }
+    a{
+        text-decoration: none;
+    }
+    a:hover{
+        text-decoration: underline;
+    }
+}
+
+/* blog */
+.content{
+    height: auto;
+    min-height: 70vh;
+    h1{
+        text-align: center;
+    }
+    .image{
+        display: flex;
+        color: yellow;
+        font-family: CeraProBold;
+        font-size: 28px;
+        justify-content: center;
+        align-items: center;
+        height: 455px;
+        object-fit: cover;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    /* attracties.blade.php */
+    .attracties{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+
+        h3{
+            text-align: center;
+        }
+        
+        .attractie{
+            display: flex;
+            align-items: center;
+            img{
+                width: 100%;
+                max-width: 400px;
+                height: 100%;
+                height: 300px;
+                padding: 10px;
+            }
+            p{
+                max-width: 250px;
+                max-height: 450px;
+                font-size: 20px
+            }
+        }
+    }
+}
+/* blog.blade.php */
+.introduction{
+    margin: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    img{
+        width: 400px;
+        height: 400px;
+    }
+    p{
+        max-width: 600px;
+        font-size: 20px;
+    }
+}
+
+/* openingstijden.blade.php */
+.openingstijden{
+
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    flex-direction: column;
+
+    th, td{
+        align-items: center;
+        padding: 0 10px;
+    }
+}
+
+/* tickets.blade.php */
+.tickets{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    .ticket{
+        margin: 5px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 2px solid black;
+        border-radius: 5px;
+        p{
+            font-size: 20px;
+        }
+    }
+
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px;
+    flex-direction: column;
+    input{
+        margin: 5px;
+        padding: 5px;
+        width: 300px;
+    }
+    button{
+        margin: 5px;
+        padding: 5px;
+        width: 300px;
+        background-color: #ffcf00;
+        border: 2px solid black;
+        border-radius: 5px;
+        font-size: 20px;
+    }
+}
+
+/* contact.blade.php */
+.contactForm button
+{
+        margin-top: 15px;
+}
+.contactInformation
+{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 10px;
+    img{
+        width: 400px;
+        height: 400px;
+    }
+    p{
+        max-width: 600px;
+        font-size: 20px;
+    }
+
+}
+/* layout */
+.footer{
+    width: 100%;
+    background-color: #ffcf00;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    img{
+        width: 200px;
+        height: 100px;
+    }
+}
+@media screen and (max-width: 768px){
+    .openingstijden{
+        tbody{
+            display: flex;
+        } 
+        tr{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
