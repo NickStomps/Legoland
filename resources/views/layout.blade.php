@@ -12,7 +12,7 @@
             <a href="blog"><img src="{{ Vite::asset('resources/images/LEGOLAND_PARKS_LOGO.svg') }}" alt="Legoland Logo"></a>
             <ul>
                 <li>
-                    <a href="auth/register" class="register">REGISTER</a>
+                    <a href="/login" class="login">LOG IN</a>
                 </li>
                 <li>
                     <a href="tickets">TICKETS</a>

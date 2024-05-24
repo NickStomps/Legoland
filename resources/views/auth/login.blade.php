@@ -25,5 +25,6 @@
         </div>
 
         <button type="submit">Login</button>
+        <a href="register" >Nog geen account? Registreer nu!</a>    
     </form>
 @endsection
