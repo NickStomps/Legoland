@@ -6,6 +6,7 @@ use App\Http\Controllers\BlogPostController;
 use App\Http\Controllers\AuthController;
 use \App\Http\Controllers\BestellingenController;
 use \App\Http\Controllers\ContactController;
+use \App\Http\Controllers\DashBoardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,7 +34,6 @@ Route::middleware('auth')->group(function () {
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
- 
 Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [AuthController::class, 'register']);
 
@@ -44,3 +44,4 @@ Route::get('/attracties', [AttractiesController::class, 'index'])->name('attract
 Route::get('/tickets', [BestellingenController::class, 'index'])->name('tickets');  
 Route::post('/bestellingen/save', [BestellingenController::class, 'store'])->name('bestellingen.store');
 Route::post('/contact/save', [ContactController::class, 'store'])->name('contact.store');
+Route::get('/dashboard', [DashBoardController::class, 'dashboard'])->name('dashboard');

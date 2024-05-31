@@ -11,8 +11,18 @@
         <div class="header">
             <a href="blog"><img src="{{ Vite::asset('resources/images/LEGOLAND_PARKS_LOGO.svg') }}" alt="Legoland Logo"></a>
             <ul>
-                <li>
-                    <a href="/login" class="login">LOG IN</a>
+                    @if(Auth::check())
+                    <li>
+                        <a href="/dashboard" >DASHBOARD</a>
+                    </li>
+                    <li>
+                        <a href="/logout" class="login">LOG OUT</a>
+                    </li>
+                    @else
+                    <li>
+                        <a href="/login" class="login">LOG IN</a>
+                    </li>
+                    @endif
                 </li>
                 <li>
                     <a href="tickets">TICKETS</a>
