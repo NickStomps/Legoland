@@ -5,6 +5,7 @@ use App\Http\Controllers\AttractiesController;
 use App\Http\Controllers\BlogPostController;
 use App\Http\Controllers\AuthController;
 use App\Http\controllers\AccommodatieController;
+use App\Http\Controllers\AccommodatieDetailController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,6 +28,7 @@ Route::middleware('auth')->group(function () {
     });
 });
 
+
 // Auth routes
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
@@ -43,3 +45,5 @@ Route::get('/tickets', [\App\Http\Controllers\BestellingenController::class, 'in
 Route::post('/bestellingen/save', [\App\Http\Controllers\BestellingenController::class, 'store'])->name('bestellingen.store');
 Route::post('/contact/save', [\App\Http\Controllers\ContactController::class, 'store'])->name('contact.store');
 Route::get('/accommodaties', [AccommodatieController::class, 'index'])->name('accommodaties');
+Route::get('/accommodatieDetails/{id}', [AccommodatieDetailController::class, 'index'])->name('accommodatieDetail');
+

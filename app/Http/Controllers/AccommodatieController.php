@@ -8,10 +8,13 @@ use Illuminate\Http\Request;
 class AccommodatieController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the resources
      */
     public function index()
     {
-        return view('accommodaties');
+        $accommodaties = Accommodatie::all();
+        return view('accommodaties' , ['accommodaties' => $accommodaties]);
     }
 }
+
+
