@@ -13,7 +13,6 @@
     <div class="header w-100">
         <a href="blog"><img src="{{ Vite::asset('resources/images/LEGOLAND_PARKS_LOGO.svg') }}" alt="Legoland Logo"></a>
         <ul>
-            <div class="test">HOEHOE</div>
             <li>
                 <a href="tickets">TICKETS</a>
             </li>
