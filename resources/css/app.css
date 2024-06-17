@@ -192,6 +192,19 @@ form{
     }
 
 }
+
+.delete{
+    background-color: red;
+    color: white;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+    text-decoration: none;
+    width: 300px;
+    text-align: center;
+}
+
 /* Login */
 .register
 {

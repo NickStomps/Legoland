@@ -29,7 +29,12 @@ class AttractiesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $attracties = new Attracties();
+        $attracties->name = $request->input('name');
+        $attracties->description = $request->input('description');
+        $attracties->imgPath = $request->input('imgPath');
+        $attracties->save();
+        return redirect()->route('dashboard');
     }
 
     /**
@@ -51,9 +56,16 @@ class AttractiesController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Attracties $attracties)
+    public function update(Request $request, $id)
     {
-        //
+        $attracties = Attracties::find($id);
+        if ($attracties) {
+            $attracties->name = $request->input('name');
+            $attracties->description = $request->input('description');
+            $attracties->imgPath = $request->input('imgPath');
+            $attracties->save();
+        }
+        return redirect()->route('dashboard');
     }
 
     /**
@@ -61,6 +73,7 @@ class AttractiesController extends Controller
      */
     public function destroy(Attracties $attracties)
     {
-        //
+        $attracties->delete();
+        return redirect()->route('dashboard');
     }
 }

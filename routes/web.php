@@ -6,7 +6,7 @@ use App\Http\Controllers\BlogPostController;
 use App\Http\Controllers\AuthController;
 use \App\Http\Controllers\BestellingenController;
 use \App\Http\Controllers\ContactController;
-use \App\Http\Controllers\DashBoardController;
+use \App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,11 +24,11 @@ Route::get('/', function () {
 });
 
 // Auth middleware
-Route::middleware('auth')->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    });
-});
+// Route::middleware('auth')->group(function () {
+//     Route::get('/dashboard', function () {
+//         return view('dashboard');
+//     });
+// });
  
 // Auth routes
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
@@ -40,8 +40,11 @@ Route::post('/register', [AuthController::class, 'register']);
 Route::get('/blog', [BlogPostController::class, 'index']);
 Route::get('/contact', [BlogPostController::class, 'contactPage'])->name('contact');  
 Route::get('/openingstijden', [BlogPostController::class, 'openingstijdenPage']);   
-Route::get('/attracties', [AttractiesController::class, 'index'])->name('attracties');
 Route::get('/tickets', [BestellingenController::class, 'index'])->name('tickets');  
 Route::post('/bestellingen/save', [BestellingenController::class, 'store'])->name('bestellingen.store');
 Route::post('/contact/save', [ContactController::class, 'store'])->name('contact.store');
-Route::get('/dashboard', [DashBoardController::class, 'dashboard'])->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('/attracties', [AttractiesController::class, 'index'])->name('attracties');
+Route::put('/attracties/{attractie}', [AttractiesController::class, 'update'])->name('attracties.update');
+Route::delete('/attracties/{attracties}', [AttractiesController::class, 'destroy'])->name('attracties.delete');
+Route::post('/attracties/save', [AttractiesController::class, 'store'])->name('attracties.store');
