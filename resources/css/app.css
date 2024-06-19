@@ -61,7 +61,7 @@ body {
     }
 }
 
-/* blog */
+/* index */
 .content{
     height: auto;
     min-height: 70vh;
@@ -110,7 +110,7 @@ body {
         }
     }
 }
-/* blog.blade.php */
+/* index.blade.php */
 .introduction{
     margin: 10px;
     display: flex;

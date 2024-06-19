@@ -2,31 +2,31 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\BlogPost;
+use App\Models\Index;
 use Illuminate\Http\Request;
 
-class BlogPostController extends Controller
+class IndexController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('blog', ['test' => 'bob']);
+        return view('index');
     }
 
     public function contactPage(){
-        return view('contact', ['test' => 'test']);
+        return view('contact');
     }
 
     public function attractiesPage(){
-        return view('attracties', ['test' => 'test']);
+        return view('attracties');
     }
     public function openingstijdenPage(){
-        return view('openingstijden', ['test' => 'test']);
+        return view('openingstijden');
     }
     public function ticketsPage(){
-        return view('tickets', ['test' => 'test']);
+        return view('tickets');
     }
 
     /**
@@ -48,7 +48,7 @@ class BlogPostController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(BlogPost $blogPost)
+    public function show(Index $index)
     {
         //
     }
@@ -56,7 +56,7 @@ class BlogPostController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(BlogPost $blogPost)
+    public function edit(Index $index)
     {
         //
     }
@@ -64,7 +64,7 @@ class BlogPostController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, BlogPost $blogPost)
+    public function update(Request $request, Index $index)
     {
         //
     }
@@ -72,7 +72,7 @@ class BlogPostController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(BlogPost $blogPost)
+    public function destroy(Index $index)
     {
         //
     }

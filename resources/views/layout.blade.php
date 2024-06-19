@@ -9,7 +9,7 @@
 <body>
     <div class="container">
         <div class="header">
-            <a href="blog"><img src="{{ Vite::asset('resources/images/LEGOLAND_PARKS_LOGO.svg') }}" alt="Legoland Logo"></a>
+            <a href="index"><img src="{{ Vite::asset('resources/images/LEGOLAND_PARKS_LOGO.svg') }}" alt="Legoland Logo"></a>
             <ul>
                     @if(Auth::check())
                     <li>

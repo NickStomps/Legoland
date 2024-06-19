@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AttractiesController;
-use App\Http\Controllers\BlogPostController;
+use App\Http\Controllers\IndexController;
 use App\Http\Controllers\AuthController;
 use \App\Http\Controllers\BestellingenController;
 use \App\Http\Controllers\ContactController;
@@ -37,9 +37,9 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [AuthController::class, 'register']);
 
-Route::get('/blog', [BlogPostController::class, 'index']);
-Route::get('/contact', [BlogPostController::class, 'contactPage'])->name('contact');  
-Route::get('/openingstijden', [BlogPostController::class, 'openingstijdenPage']);   
+Route::get('/index', [IndexController::class, 'index']);
+Route::get('/contact', [IndexController::class, 'contactPage'])->name('contact');  
+Route::get('/openingstijden', [IndexController::class, 'openingstijdenPage']);   
 Route::get('/tickets', [BestellingenController::class, 'index'])->name('tickets');  
 Route::post('/bestellingen/save', [BestellingenController::class, 'store'])->name('bestellingen.store');
 Route::post('/contact/save', [ContactController::class, 'store'])->name('contact.store');
