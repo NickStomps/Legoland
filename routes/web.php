@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\BestellingenController;
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AttractiesController;
 use App\Http\Controllers\BlogPostController;
@@ -42,10 +44,11 @@ Route::get('/blog', [BlogPostController::class, 'index']);
 Route::get('/contact', [BlogPostController::class, 'contactPage'])->name('contact');
 Route::get('/openingstijden', [BlogPostController::class, 'openingstijdenPage']);
 Route::get('/attracties', [AttractiesController::class, 'index'])->name('attracties');
-Route::get('/tickets', [\App\Http\Controllers\BestellingenController::class, 'index'])->name('tickets');
-Route::post('/bestellingen/save', [\App\Http\Controllers\BestellingenController::class, 'store'])->name('bestellingen.store');
-Route::post('/contact/save', [\App\Http\Controllers\ContactController::class, 'store'])->name('contact.store');
+Route::get('/tickets', [BestellingenController::class, 'index'])->name('tickets');
+Route::post('/bestellingen/save', [BestellingenController::class, 'store'])->name('bestellingen.store');
+Route::post('/contact/save', [ContactController::class, 'store'])->name('contact.store');
 Route::get('/accommodaties', [AccommodatieController::class, 'index'])->name('accommodaties');
 Route::get('/accommodatieDetails/{id}', [AccommodatieDetailController::class, 'index'])->name('accommodatieDetail');
 
 Route::post('/orders',  [OrderController::class, 'store'])->name('orders.store');
+
