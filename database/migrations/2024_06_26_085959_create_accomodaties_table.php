@@ -11,8 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('accommodaties', function (Blueprint $table) {
-            // Add 'name' column
+        Schema::create('accommodaties', function (Blueprint $table) {
+            $table->id();
+            $table->timestamps();
             $table->string('name');
 
             // Add 'description' column
@@ -20,9 +21,6 @@ return new class extends Migration
 
             // Add 'imgPath' column
             $table->string('imgPath');
-
-            // You can also add timestamps if needed
-            // $table->timestamps();
         });
     }
 
@@ -31,15 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('accommodaties', function (Blueprint $table) {
-            // Drop 'name' column
-            $table->dropColumn('name');
-
-            // Drop 'description' column
-            $table->dropColumn('description');
-
-            // Drop 'imgPath' column
-            $table->dropColumn('imgPath');
-        });
+        Schema::dropIfExists('accomodaties');
     }
 };

@@ -14,7 +14,7 @@
 
                 <div class="col-4">
                 <div class="card d-flex justify-content-center">
-                    <a href="/accommodatieDetails/{{$accommodatie->id}}" class="" style="color:black; text-decoration: none">
+                    <a href="/accommodatiesdetails/{{$accommodatie->id}}" class="" style="color:black; text-decoration: none">
                     <h2 class="card-header"> {{$accommodatie->name}}</h2>
                     <img class="card-img-top " style="max-width:300px; max-height: 400px;" src="{{$accommodatie->imgPath}}" alt="Card image cap">
                     <div class="card-body">

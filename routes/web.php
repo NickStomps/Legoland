@@ -53,6 +53,6 @@ Route::put('/attracties/{attractie}', [AttractiesController::class, 'update'])->
 Route::delete('/attracties/{attracties}', [AttractiesController::class, 'destroy'])->name('attracties.delete');
 Route::post('/attracties/save', [AttractiesController::class, 'store'])->name('attracties.store');
 Route::get('/accommodaties', [AccommodatieController::class, 'index'])->name('accommodaties');
-Route::get('/accommodatieDetails/{id}', [AccommodatieDetailController::class, 'index'])->name('accommodatieDetail');
+Route::get('/accommodatiesdetails/{id}', [AccommodatieDetailController::class, 'index'])->name('accommodatieDetail');
 
 Route::post('/orders',  [OrderController::class, 'store'])->name('orders.store');
