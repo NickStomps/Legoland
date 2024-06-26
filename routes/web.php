@@ -1,12 +1,15 @@
 <?php
 
+use App\Http\Controllers\BestellingenController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AttractiesController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\AuthController;
-use \App\Http\Controllers\BestellingenController;
-use \App\Http\Controllers\ContactController;
-use \App\Http\Controllers\DashboardController;
+use App\Http\Controllers\AccommodatieController;
+use App\Http\Controllers\AccommodatieDetailController;
+use App\Http\Controllers\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,16 +27,17 @@ Route::get('/', function () {
 });
 
 // Auth middleware
-// Route::middleware('auth')->group(function () {
-//     Route::get('/dashboard', function () {
-//         return view('dashboard');
-//     });
-// });
+Route::middleware('auth')->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    });
+});
  
 // Auth routes
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+ 
 Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [AuthController::class, 'register']);
 
@@ -48,3 +52,7 @@ Route::get('/attracties', [AttractiesController::class, 'index'])->name('attract
 Route::put('/attracties/{attractie}', [AttractiesController::class, 'update'])->name('attracties.update');
 Route::delete('/attracties/{attracties}', [AttractiesController::class, 'destroy'])->name('attracties.delete');
 Route::post('/attracties/save', [AttractiesController::class, 'store'])->name('attracties.store');
+Route::get('/accommodaties', [AccommodatieController::class, 'index'])->name('accommodaties');
+Route::get('/accommodatieDetails/{id}', [AccommodatieDetailController::class, 'index'])->name('accommodatieDetail');
+
+Route::post('/orders',  [OrderController::class, 'store'])->name('orders.store');

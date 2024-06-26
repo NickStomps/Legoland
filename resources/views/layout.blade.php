@@ -4,14 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Legoland</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body>
-    <div class="container">
-        <div class="header">
+<body class="mw-100">
+    <div class="container mw-100 p-0">
+        <div class="header w-100">
             <a href="index"><img src="{{ Vite::asset('resources/images/LEGOLAND_PARKS_LOGO.svg') }}" alt="Legoland Logo"></a>
-            <ul>
-                    @if(Auth::check())
+            <>
+                @if(Auth::check())
                     <li>
                         <a href="/dashboard" >DASHBOARD</a>
                     </li>
@@ -23,7 +25,6 @@
                         <a href="/login" class="login">LOG IN</a>
                     </li>
                     @endif
-                </li>
                 <li>
                     <a href="tickets">TICKETS</a>
                 </li>
@@ -35,6 +36,9 @@
                 </li>
                 <li>
                     <a href="openingstijden">OPENINGSTIJDEN</a>
+                </li>
+                <li>
+                    <a href="accommodaties">ACCOMMODATIES</a>
                 </li>
             </ul>
         </div>

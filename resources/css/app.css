@@ -7,11 +7,11 @@
     src: url('../font/CeraPro-Bold.woff');
 }
 
-.hidden{
+.hidden {
     display: none;
 }
-.klap-uit-attracties
-{
+
+.klap-uit-attracties {
     border-bottom: 2px solid black;
     border-left: 2px solid black;
     width: 500px;
@@ -91,7 +91,7 @@ body {
         h3{
             text-align: center;
         }
-        
+
         .attractie{
             display: flex;
             align-items: center;
@@ -240,7 +240,7 @@ form{
     .openingstijden{
         tbody{
             display: flex;
-        } 
+        }
         tr{
             display: flex;
             flex-direction: column;

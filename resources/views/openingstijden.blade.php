@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="openingstijden">
-    <h1>OPENINGSTIJDEN</h2>
+    <h2>OPENINGSTIJDEN</h2>
 <table>
     <tr>
         <th>Maandag</th>
