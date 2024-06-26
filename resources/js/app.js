@@ -18,3 +18,7 @@ document.querySelectorAll("#down").forEach((element) => {
     }
   });
 });
+
+document.querySelector(".klap-uit-attracties").addEventListener("click", () => {
+  document.querySelector(".attracies-pas-aan-ding").classList.toggle("hidden");
+});

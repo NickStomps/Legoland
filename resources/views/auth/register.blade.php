@@ -35,5 +35,6 @@
         </div>
 
         <button type="submit">Register</button>
+        <a href="login">Heeft u al een account? Log in!</a>
     </form>
 @endsection
