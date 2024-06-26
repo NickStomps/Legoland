@@ -6,6 +6,7 @@ use App\Http\Controllers\BlogPostController;
 use App\Http\Controllers\AuthController;
 use App\Http\controllers\AccommodatieController;
 use App\Http\Controllers\AccommodatieDetailController;
+use App\Http\Controllers\OrderController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -47,3 +48,4 @@ Route::post('/contact/save', [\App\Http\Controllers\ContactController::class, 's
 Route::get('/accommodaties', [AccommodatieController::class, 'index'])->name('accommodaties');
 Route::get('/accommodatieDetails/{id}', [AccommodatieDetailController::class, 'index'])->name('accommodatieDetail');
 
+Route::post('/orders',  [OrderController::class, 'store'])->name('orders.store');

@@ -1,8 +1,15 @@
 @extends('layout')
 
 @section('content')
-    <div class="container m-0 p-0 mw-100 mh-100" style="min-height: 80vh">
+    <div class="container m-0 p-3 mw-100 mh-100 d-flex justify-content-center" style="min-height: 80vh">
+        @if (session('status'))
+            <div class="alert alert-success w-30 h-10">
+                {{ session('status') }}
+            </div>
+        @endif
         <div class="row w-100 h-100 d-flex justify-content-center m-0 p-0 " style="width:100vh">
+
+
             @foreach($accommodaties as $accommodatie)
 
                 <div class="col-4">
@@ -18,7 +25,17 @@
         </div>
             </div>
 
+
             @endforeach
         </div>
     </div>
+    <script>
+        window.onload = function() {
+            setTimeout(function() {
+                let alertBox = document.getElementById('status-alert');
+                if (alertBox) alertBox.style.display = 'none';
+            }, 3000);
+        };
+    </script>
 @endsection
+
