@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\accommodatieDetail;
+use App\Models\AccommodatieDetail;
 use Illuminate\Http\Request;
 use App\Models\accommodatie;
 
@@ -38,7 +38,7 @@ class AccommodatieDetailController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(accommodatieDetail $accommodatieDetail)
+    public function show(AccommodatieDetail $accommodatieDetail)
     {
         //
     }
@@ -46,7 +46,7 @@ class AccommodatieDetailController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(accommodatieDetail $accommodatieDetail)
+    public function edit(AccommodatieDetail $accommodatieDetail)
     {
         //
     }
@@ -54,9 +54,9 @@ class AccommodatieDetailController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, accommodatieDetail $accommodatieDetail)
+    public function update(Request $request)
     {
-        //
+        
     }
 
     /**

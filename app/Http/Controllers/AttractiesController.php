@@ -63,7 +63,7 @@ class AttractiesController extends Controller
             $attracties->name = $request->input('name');
             $attracties->description = $request->input('description');
             $attracties->imgPath = $request->input('imgPath');
-            $attracties->save();
+            $attracties->update();
         }
         return redirect()->route('dashboard');
     }

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Dashboard;
 use App\Models\Attracties;
 use Illuminate\Http\Request;
+use App\Models\Accommodatie;
+use App\Models\Order;
 
 class DashboardController extends Controller
 {
@@ -14,7 +16,9 @@ class DashboardController extends Controller
     public function index()
     {
         $attracties = Attracties::all();
-        return view('dashboard', ['attracties' => $attracties]);
+        $accommodaties = Accommodatie::all();
+        $orders = Order::all();
+        return view('dashboard', ['attracties' => $attracties, 'accommodaties' => $accommodaties, 'orders' => $orders]);
     }
 
     /**

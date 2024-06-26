@@ -22,3 +22,11 @@ document.querySelectorAll("#down").forEach((element) => {
 document.querySelector(".klap-uit-attracties").addEventListener("click", () => {
   document.querySelector(".attracies-pas-aan-ding").classList.toggle("hidden");
 });
+
+document.querySelector(".klap-uit-accomodaties").addEventListener("click", () => {
+  document.querySelector(".accomodaties-pas-aan-ding").classList.toggle("hidden");
+});
+
+document.querySelector(".klap-uit-orders").addEventListener("click", () => {
+  document.querySelector(".orders-ding").classList.toggle("hidden");
+});

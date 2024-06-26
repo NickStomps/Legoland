@@ -15,6 +15,23 @@ class AccommodatieController extends Controller
         $accommodaties = Accommodatie::all();
         return view('accommodaties' , ['accommodaties' => $accommodaties]);
     }
+    
+    public function update(Request $request, $id)
+    {
+            $accommodatie = Accommodatie::find($id);
+        if ($accommodatie) {
+            $accommodatie->name = $request->input('name');
+            $accommodatie->description = $request->input('description');
+            $accommodatie->imgPath = $request->input('imgPath');
+            $accommodatie->save();
+        }
+        return redirect()->route('dashboard');
+    }
+        public function destroy(Accommodatie $accommodatie)
+    {
+        $accommodatie->delete();
+        return redirect()->route('dashboard');
+    }
 }
 
 

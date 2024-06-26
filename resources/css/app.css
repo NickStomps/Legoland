@@ -1,7 +1,8 @@
 @font-face {
-  font-family: CeraPro;
-  src: url('../font/CeraPro-Regular.woff');
+    font-family: CeraPro;
+    src: url('../font/CeraPro-Regular.woff');
 }
+
 @font-face {
     font-family: CeraProBold;
     src: url('../font/CeraPro-Bold.woff');
@@ -11,32 +12,38 @@
     display: none;
 }
 
-.klap-uit-attracties {
+.klap-uit-attracties,
+.klap-uit-accomodaties,
+.klap-uit-orders {
     border-bottom: 2px solid black;
     border-left: 2px solid black;
     width: 500px;
-    margin: 10px auto 0 auto;
+    margin: 10px auto;
     border-radius: 3px;
 }
 
 /* Layout */
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     font-family: CeraPro;
 }
-.header{
+
+.header {
     display: flex;
     justify-content: space-between;
     background-color: #ffcf00;
-    img{
+
+    img {
         width: 200px;
         height: 100px;
     }
-    ul{
+
+    ul {
         list-style: none;
         padding: 0 10px 0 0;
         font-size: 18px;
@@ -44,31 +51,37 @@ body {
         flex-direction: row;
         align-items: center;
     }
-    li{
+
+    li {
         margin: 5px;
     }
-    a{
+
+    a {
         text-decoration: none;
         color: black;
     }
-    a:hover{
+
+    a:hover {
         text-decoration: underline;
         color: gray;
     }
-    .login{
+
+    .login {
         border-right: 1px solid black;
         padding: 10px;
     }
 }
 
 /* index */
-.content{
+.content {
     height: auto;
     min-height: 70vh;
-    h1{
+
+    h1 {
         text-align: center;
     }
-    .image{
+
+    .image {
         display: flex;
         color: yellow;
         font-family: CeraProBold;
@@ -82,27 +95,29 @@ body {
     }
 
     /* attracties.blade.php */
-    .attracties{
+    .attracties {
         display: flex;
         justify-content: space-around;
         align-items: center;
         flex-direction: column;
 
-        h3{
+        h3 {
             text-align: center;
         }
 
-        .attractie{
+        .attractie {
             display: flex;
             align-items: center;
-            img{
+
+            img {
                 width: 100%;
                 max-width: 400px;
                 height: 100%;
                 height: 300px;
                 padding: 10px;
             }
-            p{
+
+            p {
                 max-width: 250px;
                 max-height: 450px;
                 font-size: 20px
@@ -110,42 +125,47 @@ body {
         }
     }
 }
+
 /* index.blade.php */
-.introduction{
+.introduction {
     margin: 10px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    img{
+
+    img {
         width: 400px;
         height: 400px;
     }
-    p{
+
+    p {
         max-width: 600px;
         font-size: 20px;
     }
 }
 
 /* openingstijden.blade.php */
-.openingstijden{
+.openingstijden {
 
     display: flex;
     align-items: center;
     margin: 10px;
     flex-direction: column;
 
-    th, td{
+    th,
+    td {
         align-items: center;
         padding: 0 10px;
     }
 }
 
 /* tickets.blade.php */
-.tickets{
+.tickets {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    .ticket{
+
+    .ticket {
         margin: 5px;
         padding: 10px;
         display: flex;
@@ -153,26 +173,29 @@ body {
         align-items: center;
         border: 2px solid black;
         border-radius: 5px;
-        p{
+
+        p {
             font-size: 20px;
         }
     }
 
 }
 
-form{
+form {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     margin: 10px;
     flex-direction: column;
-    input{
+
+    input {
         margin: 5px;
         padding: 5px;
         width: 300px;
     }
-    button{
+
+    button {
         margin: 5px;
         padding: 5px;
         width: 300px;
@@ -184,28 +207,29 @@ form{
 }
 
 /* contact.blade.php */
-.contactForm button
-{
-        margin-top: 15px;
+.contactForm button {
+    margin-top: 15px;
 }
-.contactInformation
-{
+
+.contactInformation {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     margin: 10px;
-    img{
+
+    img {
         width: 400px;
         height: 400px;
     }
-    p{
+
+    p {
         max-width: 600px;
         font-size: 20px;
     }
 
 }
 
-.delete{
+.delete {
     background-color: red;
     color: white;
     border: 2px solid black;
@@ -218,12 +242,12 @@ form{
 }
 
 /* Login */
-.register
-{
+.register {
     align-items: center;
 }
+
 /* layout */
-.footer{
+.footer {
     width: 100%;
     background-color: #ffcf00;
     display: flex;
@@ -231,19 +255,29 @@ form{
     justify-content: space-between;
     padding: 10px;
     bottom: auto;
-    img{
+
+    img {
         width: 200px;
         height: 100px;
     }
 }
-@media screen and (max-width: 768px){
-    .openingstijden{
-        tbody{
+
+@media screen and (max-width: 768px) {
+    .openingstijden {
+        tbody {
             display: flex;
         }
-        tr{
+
+        tr {
             display: flex;
             flex-direction: column;
         }
     }
+}
+
+tr,
+th,
+td {
+    border: 1px solid black;
+    padding: 2px;
 }

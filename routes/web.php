@@ -5,11 +5,11 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AttractiesController;
-use App\Http\Controllers\IndexController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AccommodatieController;
 use App\Http\Controllers\AccommodatieDetailController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\IndexController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +31,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
     });
+    Route::put('/attracties/{attractie}', [AttractiesController::class, 'update'])->name('attracties.update');
+    Route::put('/accommodaties/{accommodatie}/update', [AccommodatieController::class, 'update'])->name('accommodaties.update');
+    Route::delete('/accommodaties/{accommodatie}', [AccommodatieController::class, 'destroy'])->name('accommodaties.delete');
+    Route::delete('/attracties/{attracties}', [AttractiesController::class, 'destroy'])->name('attracties.delete');
 });
  
 // Auth routes
@@ -49,8 +53,6 @@ Route::post('/bestellingen/save', [BestellingenController::class, 'store'])->nam
 Route::post('/contact/save', [ContactController::class, 'store'])->name('contact.store');
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('/attracties', [AttractiesController::class, 'index'])->name('attracties');
-Route::put('/attracties/{attractie}', [AttractiesController::class, 'update'])->name('attracties.update');
-Route::delete('/attracties/{attracties}', [AttractiesController::class, 'destroy'])->name('attracties.delete');
 Route::post('/attracties/save', [AttractiesController::class, 'store'])->name('attracties.store');
 Route::get('/accommodaties', [AccommodatieController::class, 'index'])->name('accommodaties');
 Route::get('/accommodatiesdetails/{id}', [AccommodatieDetailController::class, 'index'])->name('accommodatieDetail');
